@@ -34,3 +34,62 @@ enum Label {
 3) Сделаем SpamAnalyzer и NegativeTextAnalyzer наследниками KeywordAnalyzer и реализуем абстрактные методы.
 
 Последний штрих – написать метод checkLabels, который будет возвращать метку для комментария по набору анализаторов текста. checkLabels должен возвращать первую не-OK метку в порядке данного набора анализаторов, и OK, если все анализаторы вернули OK.
+
+---------------------------------------------------------------------------------------------------
+Output:
+test #0: This comment is so good.
+1: OK
+2: OK
+3: OK
+4: OK
+5: OK
+6: OK
+test #1: This comment is so Loooooooooooooooooooooooooooong.
+1: TOO_LONG
+2: TOO_LONG
+3: TOO_LONG
+4: TOO_LONG
+5: TOO_LONG
+6: TOO_LONG
+test #2: Very negative comment !!!!=(!!!!;
+1: NEGATIVE_TEXT
+2: NEGATIVE_TEXT
+3: NEGATIVE_TEXT
+4: NEGATIVE_TEXT
+5: NEGATIVE_TEXT
+6: NEGATIVE_TEXT
+test #3: Very BAAAAAAAAAAAAAAAAAAAAAAAAD comment with :|;
+1: NEGATIVE_TEXT
+2: TOO_LONG
+3: TOO_LONG
+4: TOO_LONG
+5: NEGATIVE_TEXT
+6: NEGATIVE_TEXT
+test #4: This comment is so bad....
+1: SPAM
+2: SPAM
+3: SPAM
+4: SPAM
+5: SPAM
+6: SPAM
+test #5: The comment is a spam, maybeeeeeeeeeeeeeeeeeeeeee!
+1: SPAM
+2: SPAM
+3: TOO_LONG
+4: TOO_LONG
+5: SPAM
+6: TOO_LONG
+test #6: Negative bad :( spam.
+1: SPAM
+2: SPAM
+3: SPAM
+4: NEGATIVE_TEXT
+5: NEGATIVE_TEXT
+6: NEGATIVE_TEXT
+test #7: Very bad, very neg =(, very ..................
+1: SPAM
+2: SPAM
+3: TOO_LONG
+4: TOO_LONG
+5: NEGATIVE_TEXT
+6: NEGATIVE_TEXT
