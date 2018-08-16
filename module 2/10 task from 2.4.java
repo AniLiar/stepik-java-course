@@ -34,7 +34,7 @@ class Main {
         }
       }
     }
-    return printSpeeches(speechs, roles);
+    return concatSpeeches(speechs, roles);
   }
 
   public static String concatSpeeches(Map<String,StringBuilder> speechs, String[] roles) {
