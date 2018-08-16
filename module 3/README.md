@@ -37,6 +37,7 @@ enum Label {
 
 ---------------------------------------------------------------------------------------------------
 Output:
+```
 test #0: This comment is so good.
 1: OK
 2: OK
@@ -93,3 +94,4 @@ test #7: Very bad, very neg =(, very ..................
 4: TOO_LONG
 5: NEGATIVE_TEXT
 6: NEGATIVE_TEXT
+```
